@@ -2437,7 +2437,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 81d2ccc52c4a55142ac5dc1c3ed14c6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3309,47 +3309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a983a20f538614e8b3dbfbe52442ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataSoal:
-  - hint: {fileID: 21300000, guid: c4ae8a0df41a8664a8e45e6819aa3dd9, type: 3}
-    pertanyaan: Warna dari mawar?
-    jawaban:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 01000000
-  - hint: {fileID: 21300000, guid: c3305e49544f41f4188f8dc5ee677250, type: 3}
-    pertanyaan: Warna dari langit?
-    jawaban:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 00010000
-  - hint: {fileID: 21300000, guid: b4f18fb6bbc9cc549959392f457e7a90, type: 3}
-    pertanyaan: Warna dari daun?
-    jawaban:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 00000100
-  - hint: {fileID: 21300000, guid: a23bf961388189f4d9d419d1eb92a43c, type: 3}
-    pertanyaan: Warna dari matahari?
-    jawaban:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 00000001
-  - hint: {fileID: 21300000, guid: f28926f1b6505024582edb70fc281528, type: 3}
-    pertanyaan: Warna dari laut?
-    jawaban:
-    - Merah
-    - Biru
-    - Hijau
-    - Kuning
-    adalahBenar: 00010000
+  _dataSoal: {fileID: 11400000, guid: 3ac1bf2b41305ac43ad9894ef4b87a59, type: 2}
+  _progress: {fileID: 11400000, guid: 2b172e5cee2c28e4e86c9358af811c7f, type: 2}
   _tempatPertanyaan: {fileID: 566922296}
   _tempatJawaban:
   - {fileID: 155893917}

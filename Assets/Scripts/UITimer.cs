@@ -51,7 +51,7 @@ public class UITimer : MonoBehaviour
             return;
         }
 
-        Debug.Log(_sisaWaktu);
+        //Debug.Log(_sisaWaktu);
     }
 
     public void UlangiWaktu()
