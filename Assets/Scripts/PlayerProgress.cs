@@ -40,13 +40,13 @@ public class PlayerProgress : ScriptableObject
         }
 
         // Sampel data
-        progresData.koin = 200;
-        if (progresData.progresLevel == null)
-        {
-            progresData.progresLevel = new();
-        }
-        progresData.progresLevel.Add("Level Pack 1", 3);
-        progresData.progresLevel.Add("Level Pack 3", 5);
+        //progresData.koin = 200;
+        //if (progresData.progresLevel == null)
+        //{
+        //    progresData.progresLevel = new();
+        //}
+        //progresData.progresLevel.Add("Level Pack 1", 3);
+        //progresData.progresLevel.Add("Level Pack 3", 5);
 
         // Menulis data ke file teks
         //string teksProgress = "";

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 [CreateAssetMenu (
@@ -15,6 +16,7 @@ public class LevelSoalKuis : ScriptableObject
     }
     public Sprite hint;
     public string pertanyaan;
+    public int index;
 
     public OpsiJawaban[] opsiJawaban = new OpsiJawaban[0];
 }

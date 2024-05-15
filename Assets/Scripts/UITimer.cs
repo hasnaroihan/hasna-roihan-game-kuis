@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class UITimer : MonoBehaviour
 {
+    public static event System.Action TimesUpEvent;
     [SerializeField] private int _waktuJawab = 30;
     [SerializeField] private Slider _timeBar;
-    [SerializeField] private UIPesanLevel _tempatPesan;
 
     private float _sisaWaktu = 0;
     private bool _waktuBerjalan = false;
@@ -46,8 +46,8 @@ public class UITimer : MonoBehaviour
         {
             Debug.Log("Waktu Habis");
             _waktuBerjalan = false;
-            _tempatPesan.Pesan = "Waktu Habis";
-            _tempatPesan.gameObject.SetActive(true);
+
+            TimesUpEvent.Invoke();
             return;
         }
 

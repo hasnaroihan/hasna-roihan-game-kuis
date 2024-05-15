@@ -5,26 +5,19 @@ using UnityEngine;
 
 public class UIPoinJawaban : MonoBehaviour
 {
+    public static event System.Action<string, bool> OnClickEvent;
+
     [SerializeField] private TextMeshProUGUI _teksJawaban;
     [SerializeField] private bool _adalahBenar = false;
-    [SerializeField] private UIPesanLevel _tempatPesan;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void PilihJawaban()
     {
-        //Debug.Log($"Jawaban yang dipilih: {_teksJawaban.text} ({_adalahBenar})");
-        _tempatPesan.Pesan = $"Jawaban yang dipilih: {_teksJawaban.text} ({_adalahBenar})";
+        OnClickEvent?.Invoke(_teksJawaban.text, _adalahBenar);
+    }
+
+    private void OnDestroy()
+    {
+      
     }
 
     public void SetJawaban(string teksJawaban, bool adalahBenar)
