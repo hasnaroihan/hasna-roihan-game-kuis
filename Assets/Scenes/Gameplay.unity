@@ -2235,6 +2235,7 @@ GameObject:
   - component: {fileID: 1626096783}
   - component: {fileID: 1626096782}
   - component: {fileID: 1626096781}
+  - component: {fileID: 1626096785}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -2329,6 +2330,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1626096785
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626096780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3557745bc40d5742907ad3b23ed9666, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1660564967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,6 +2389,10 @@ MonoBehaviour:
   - {fileID: 812926518}
   - {fileID: 547294868}
   _gameSceneManager: {fileID: 1481557172}
+  _animator: {fileID: 1626096785}
+  _answerSFX:
+  - {fileID: 8300000, guid: 614db33bdb2f5f1419d243f70a357859, type: 3}
+  - {fileID: 8300000, guid: d1722ea015536304ea47af841c0a65e2, type: 3}
 --- !u!4 &1660564969
 Transform:
   m_ObjectHideFlags: 0

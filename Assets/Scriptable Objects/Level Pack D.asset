@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15af6509ef2591b44bc8b1ea36e9384d, type: 3}
   m_Name: Level Pack D
   m_EditorClassIdentifier: 
+  _price: 20
   _isiLevel:
   - {fileID: 11400000, guid: e08859f48c43e564d97d8dcf44f55b6c, type: 2}
   - {fileID: 11400000, guid: 869cf7ba755661f498a0c74e69491288, type: 2}

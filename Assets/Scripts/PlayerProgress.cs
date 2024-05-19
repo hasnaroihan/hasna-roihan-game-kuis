@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Unity.Collections;
 using System.IO.Enumeration;
+using Unity.VisualScripting;
 
 [CreateAssetMenu(
     fileName = "Player Progress Baru",
@@ -18,11 +19,16 @@ public class PlayerProgress : ScriptableObject
         public Dictionary<string, int> progresLevel;
     }
 
+    [SerializeField] private string _startingLevelPackName = string.Empty;
+    [SerializeField] private string filename;
+
     public MainData progresData = new MainData();
-    private string directoryPath = Application.dataPath + "/Temporary/";
-    private string filename = "playerprogress.txt";
 
-
+#if UNITY_EDITOR
+    string directoryPath = Application.dataPath + "/Temporary/";
+#elif (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+    string directoryPath = Application.persistentDataPath + "/LocalProgress/";
+#endif
 
     public void SimpanProgres()
     {
@@ -47,6 +53,15 @@ public class PlayerProgress : ScriptableObject
         //}
         //progresData.progresLevel.Add("Level Pack 1", 3);
         //progresData.progresLevel.Add("Level Pack 3", 5);
+
+        if (progresData.progresLevel == null)
+        {
+            progresData.progresLevel = new()
+            {
+                { _startingLevelPackName, 0 }
+            };
+            progresData.koin = 0;
+        }
 
         // Menulis data ke file teks
         //string teksProgress = "";
@@ -80,6 +95,7 @@ public class PlayerProgress : ScriptableObject
         //writer.Dispose();
 
         fileStream.Dispose();
+        Debug.Log("Data berhasil diperbarui");
     }
 
     public bool MuatProgres()
@@ -100,7 +116,7 @@ public class PlayerProgress : ScriptableObject
 
             fileStream.Dispose();
 
-            Debug.Log($"{progresData.koin}; {progresData.progresLevel.Count}");
+            Debug.Log("Berhasil memuat data");
 
             return true;
         }

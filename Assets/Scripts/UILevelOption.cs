@@ -9,6 +9,7 @@ public class UILevelOption : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textLabel;
     [SerializeField] private LevelSoalKuis _levelKuis;
     [SerializeField] private Button _button;
+    [SerializeField] private bool _locked;
     //[SerializeField] private InitGameplayObject _initGameplayObject;
 
     public static event System.Action<int> OnClickEvent;
@@ -35,8 +36,15 @@ public class UILevelOption : MonoBehaviour
         _levelKuis.index = idx;
     }
 
+    public void Lock()
+    {
+        _locked = true;
+        _button.interactable = false;
+    }
+
     private void OnClick()
     {
+        if (_locked) return;
         OnClickEvent?.Invoke(_levelKuis.index);
     }
 }

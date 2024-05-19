@@ -9,16 +9,15 @@ public class UILevelPackList : MonoBehaviour
     [SerializeField] UILevelList _levelList;
     [SerializeField] private GameObject _headerLevelPack, _headerLevel;
     [SerializeField] private InitGameplayObject _initGameplayObject;
-    [Space, SerializeField] private LevelPackKuis[] _levelPackKuis;
+    [SerializeField] private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        LoadLevelPack();
-        
+        //LoadLevelPack();
         if (_initGameplayObject.onLosing)
         {
-            LevelPackButtonOnClick(_initGameplayObject.levelPack);
+            LevelPackButtonOnClick(_initGameplayObject.levelPack, false, _initGameplayObject.indexLevel);
         }
         UILevelPackOption.OnClickEvent += LevelPackButtonOnClick;
     }
@@ -28,12 +27,22 @@ public class UILevelPackList : MonoBehaviour
         _initGameplayObject.Reset();
     }
 
-    private void LoadLevelPack()
+    public void LoadLevelPack(LevelPackKuis[] levelPackKuis, PlayerProgress.MainData playerData)
     {
-        foreach(var levelPack in _levelPackKuis)
+        Debug.Log("Loading level pack...");
+        foreach(var levelPack in levelPackKuis)
         {
             var t = Instantiate(_levelPackOption, _content);
-            t.SetLevelPack(levelPack);
+            
+
+            if(!playerData.progresLevel.ContainsKey(levelPack.name))
+            {
+                t.SetLevelPack(levelPack, 0);
+                t.Lock();
+            } else
+            {
+                t.SetLevelPack(levelPack, playerData.progresLevel[levelPack.name]);
+            }
         }
     }
 
@@ -42,15 +51,28 @@ public class UILevelPackList : MonoBehaviour
         UILevelPackOption.OnClickEvent -= LevelPackButtonOnClick;
     }
 
-    private void LevelPackButtonOnClick(LevelPackKuis levelPack)
+    private void LevelPackButtonOnClick(LevelPackKuis levelPack, bool locked, int idxProgress)
     {
+        if (locked) return;
+
         _levelList.gameObject.SetActive(true);
-        _levelList.UnloadLevelPack(levelPack);
+        _levelList.UnloadLevelPack(levelPack, idxProgress);
 
         gameObject.SetActive(false);
         _headerLevelPack.gameObject.SetActive(false);
         _headerLevel.gameObject.SetActive(true);
 
         _initGameplayObject.levelPack = levelPack;
+        _animator.SetTrigger("ToLevelList");
+    }
+
+    public void RemoveChildren()
+    {
+        int count = _content.childCount;
+
+        for (int i = 0; i < count; i++)
+        {
+            Destroy(_content.GetChild(i).gameObject);
+        }
     }
 }

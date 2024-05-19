@@ -13,8 +13,7 @@ public class UIPertanyaan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Isi pertanyaan:");
-        Debug.Log(_pertanyaanKuis.text);
+        
     }
 
     // Update is called once per frame

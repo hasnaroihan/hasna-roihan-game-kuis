@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 6504941351174857701}
   - component: {fileID: 5142164238260404047}
   - component: {fileID: 7084699246348389238}
+  - component: {fileID: 989564037474393182}
   m_Layer: 5
   m_Name: OptionButtonSmall
   m_TagString: Untagged
@@ -255,7 +256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6504941351174857701}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 989564037474393182}
+        m_TargetAssemblyTypeName: AudioPlayer, Assembly-CSharp
+        m_MethodName: PlayClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: f82aa431de1b4e940b4e4f418009c60b, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7084699246348389238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,4 +284,16 @@ MonoBehaviour:
   _textLabel: {fileID: 7807348819018770333}
   _levelKuis: {fileID: 0}
   _button: {fileID: 5142164238260404047}
-  _initGameplayObject: {fileID: 11400000, guid: 54d0380240163664d83d066f7a3cbaf9, type: 2}
+  _locked: 0
+--- !u!114 &989564037474393182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319771476322335484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c160cf337ae1e4c9d388d2ef327977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

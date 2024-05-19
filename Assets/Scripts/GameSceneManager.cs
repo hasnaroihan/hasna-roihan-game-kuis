@@ -9,13 +9,17 @@ public class GameSceneManager : MonoBehaviour
 
     private void Start()
     {
-        //if (_p)
-        //{
-        //    Debug.Log(_p.progresData.koin);
-        //}
+        
     }
     public void OpenScene (string sceneName)
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        if (sceneName == "Gameplay")
+        {
+            AudioManager.instance.PlayBGM(1);
+        } else
+        {
+            AudioManager.instance.PlayBGM(0);
+        }
     }
 }
